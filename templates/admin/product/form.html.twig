@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ProductController!{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col">
+        <h2> Management Products</h2>
+            {{ form_start(form,
+            {attr:{ novalidate: 'novalidate' },
+                }) 
+            }}
+                <p>
+                {{ form_label(form.name, 'Name : ')}}
+                {{ form_widget(form.name)}}
+                </p>
+                  <p>
+                {{ form_label(form.price, 'price: ')}}
+                {{ form_widget(form.price)}}
+                </p>
+                <p>
+                {{ form_label(form.description, 'Description : ')}}
+                {{ form_widget(form.description)}}
+                </p>
+                <p>
+                {{ form_label(form.quantity, 'quantity: ')}}
+                {{ form_widget(form.quantity)}}
+                </p>
+               <p>
+                {{ form_label(form.image, 'image: ')}}
+                {{ form_widget(form.image)}}
+                </p>
+                <p>
+                    <input type="submit" class="btn btn-primary">
+                </p>
+            
+            {{ form_end(form) }}
+            
+    </div>
+<div>
+
+
+{% endblock %}

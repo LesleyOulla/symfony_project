@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+
+<ol>
+{% for key, value in assoc_array %}
+<li> {{key ~ ' : ' ~value}}</li>
+{% endfor %}
+</ol>
+
+
+<p> {{ now | date('d/m/Y H:i:s') }} </p>
+
+
+<p>
+<img src="{{ asset('img/artiste-cheveux-longs-chantant-scene.jpg') }}" width="200" alt="">
+</p>
+
+<p>
+<a href="{{ url('homepage.hello', {name: 'world'})
+}}">
+Hello world
+</a>
+</p>
+
+{% endblock %}
+
+{% block title %}
+{{parent() }} My project
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %} {% block body %}
+<div class="row">
+    <div class="col">
+        <h2>
+            products
+        </h2>
+    </div>
+</div>
+<div class="row">
+    {% for product in products%}
+    <div class="col-4">
+        <img src="{{asset('img/' ~product.image) }}"
+         width="200"
+          alt=""
+          class="img-fluid">
+        <h3>{{ product.name }}</h3>
+        <p>
+        {{ product.price | format_currency('EUR', locale='fr')
+        | replace ({',00' : ''}) }}
+        </p>
+        <a href="{{ url('product.details', { id : product.id }) }}" class="btn btn-info">
+        Détails
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

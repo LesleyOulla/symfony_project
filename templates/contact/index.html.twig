@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block body %}
+
+
+<div class="row">
+    <div class="col">
+        <h2> Contact</h2>
+            {{ form_start(form,
+            {attr:{ novalidate: 'novalidate' },
+                }) 
+            }}
+
+        <div class="container">
+            <div clas="row ">
+            <div class="col-md-6 "> 
+                  {{ form_label(form.subject, 'subject : ')}}
+                {{ form_widget(form.subject)}}
+            </div>
+            </div>
+
+            <div clas="row">
+            <div class="col-md-6 "> 
+            
+              {{ form_label(form.email, 'email: ')}}
+                {{ form_widget(form.email)}}
+            </div>
+            </div>
+
+
+             <div clas="row">
+            <div class="col-12"> 
+                {{ form_label(form.message, 'message : ')}}
+                {{ form_widget(form.message)}}
+            </div>
+            </div>
+
+
+            <div clas="row">
+            <div class="col-md"> 
+            <input type="submit" class="btn btn-primary">
+            </div>
+            </div>
+            
+        <div>
+            
+            
+            {{ form_end(form) }}
+            
+    </div>
+<div>
+
+{% endblock %}
